@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>SjQ &raquo; Project</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta name="generator" content="WordPress 3.9.40" /> <!-- leave this for stats please -->
+
+	<link rel="stylesheet" href="wp-content/themes/imbalance/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="wp-content/themes/imbalance/style.css" type="text/css" media="screen" />
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"><![endif]-->
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="http://sjq.jp/contents/wp-content/themes/imbalance/ie7.css" type="text/css" media="screen" />
+    <![endif]-->
+    <!--[if IE 6]>
+        <link rel="stylesheet" href="http://sjq.jp/contents/wp-content/themes/imbalance/ie6.css" type="text/css" media="screen" />
+    <![endif]-->
+    <link rel="shortcut icon" href="http://sjq.jp/contents/wp-content/themes/imbalance/favicon.ico" type="image/x-icon" />
+    <link rel='stylesheet' id='photo-galleria-css-css'  href='wp-content/themes/imbalance/js/photo-galleria/css/galleria.css@ver=1.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='wp-content/plugins/contact-form-7/includes/css/styles.css@ver=3.8.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cleaner-gallery-css'  href='wp-content/plugins/cleaner-gallery/css/gallery.min.css@ver=20130526.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.js@ver=1.11.0'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min.js@ver=1.2.1'></script>
+<script type='text/javascript' src='wp-content/themes/imbalance/js/photo-galleria/js/jquery.galleria.js@ver=3.9.40'></script>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.9.40" />
+
+<script type='text/javascript'>
+//<![CDATA[
+jQuery(function($) {
+		
+		$('ul.gallery_list').addClass('show_gallery'); // adds new class name to maintain degradability
+		$('.galleria_wrapper').remove();
+		$('ul.show_gallery').galleria({
+			history   : false, 
+			clickNext : true,			
+			onImage   : function(image,caption,thumb) { 
+				
+				// fade in the image &amp; caption
+				if(!($.browser.mozilla && navigator.appVersion.indexOf('Win')!=-1) ) { // FF/Win fades large images terribly slow
+				image.css('display','none').fadeIn(160);
+				}
+				caption.css('display','none').fadeIn(160);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.8);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Click for next image »');				
+				
+			},
+
+			
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+								
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.8';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(1500);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.8); } // don't fade out if the parent is active
+				)
+			}
+		});// $('ul.show_gallery li:first').addClass('active'); // uncomment to display first image when gallery loads
+	});	
+	//]]>
+	</script>    <script src="wp-content/themes/imbalance/js/columnizer.js" type="text/javascript"></script>
+    <script src="wp-content/themes/imbalance/js/columnize.js" type="text/javascript"></script>   
+    <script type="text/javascript" src="wp-content/themes/imbalance/js/animatedcollapse.js"></script>
+    <script type="text/javascript" src="wp-content/themes/imbalance/js/collapse.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" media="all" href="wp-content/themes/imbalance/mobile.css" />
+</head>
+<body class="home blog">
+
+	<div id="outer">
+    	<div id="top">
+        	<div id="logo">
+        		        		<a href="index.html">
+				<img src="wp-content/themes/imbalance/images/logo.png" alt="SjQ" /></a>
+        		        	</div>
+        </div>
+        <div id="menu">
+            <div id="navicons">
+                <ul>
+                    <li><a id="subscribe" href="index.html@feed=rss" title="">Subscribe</a></li>
+                    <li><a id="twitter" href="http://twitter.com/sjqpp" title="">Twitter</a></li>
+                    <li><a id="facebook" href="https://www.facebook.com/sjq.jp" title="">Facebook</a></li>
+                </ul>
+            </div>
+            <div id="cats">
+            	<ul>
+                	<li><a href="index.html" title="" class="active">home</a></li>
+                    <ul id="menu-menu-1" class="menu"><li id="menu-item-938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-938"><a href="index.html@p=933.html">news</a></li>
+<li id="menu-item-170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a href="index.html@p=2.html">about</a></li>
+<li id="menu-item-172" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-172"><a href="index.html@p=165.html">live/exhibition</a></li>
+<li id="menu-item-171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-171"><a href="index.html@p=6.html">contact</a></li>
+</ul>                	<li><a href="index.html#" rel="toggle[categories]" title="">categories</a></li>
+                	<!-- li><a href="#" rel="toggle[archives]" title="">archives</a></li -->
+                </ul>
+            </div>
+        </div>
+        <div id="categories">
+            <ul class="mcol2">
+				  	<li class="cat-item cat-item-1"><a href="index.html@cat=1.html" title="View all posts filed under Uncategorized">Uncategorized <span>6</span></a>
+</li>
+	<li class="cat-item cat-item-2"><a href="index.html@cat=2.html" title="View all posts filed under Project">Project <span>7</span></a>
+</li>
+	<li class="cat-item cat-item-3"><a href="index.html@cat=3.html" title="View all posts filed under Release">Release <span>10</span></a>
+</li>
+	<li class="cat-item cat-item-4"><a href="index.html@cat=4.html" title="View all posts filed under News">News <span>2</span></a>
+</li>
+	<li class="cat-item cat-item-6"><a href="index.html@cat=6.html" title="View all posts filed under live/exhibition">live/exhibition <span>11</span></a>
+</li>
+            </ul>
+        </div>
+        <div id="archives">
+            <ul class="mcol2">
+				  	<li><a href='index.html@m=202510.html'>October 2025</a></li>
+	<li><a href='index.html@m=202506.html'>June 2025</a></li>
+	<li><a href='index.html@m=202311.html'>November 2023</a></li>
+	<li><a href='index.html@m=202203.html'>March 2022</a></li>
+	<li><a href='index.html@m=202110.html'>October 2021</a></li>
+	<li><a href='index.html@m=202107.html'>July 2021</a></li>
+	<li><a href='index.html@m=202102.html'>February 2021</a></li>
+	<li><a href='index.html@m=202011.html'>November 2020</a></li>
+	<li><a href='index.html@m=202010.html'>October 2020</a></li>
+	<li><a href='index.html@m=201904.html'>April 2019</a></li>
+	<li><a href='index.html@m=201808.html'>August 2018</a></li>
+	<li><a href='index.html@m=201801.html'>January 2018</a></li>
+	<li><a href='index.html@m=201610.html'>October 2016</a></li>
+	<li><a href='index.html@m=201609.html'>September 2016</a></li>
+	<li><a href='index.html@m=201604.html'>April 2016</a></li>
+	<li><a href='index.html@m=201602.html'>February 2016</a></li>
+	<li><a href='index.html@m=201503.html'>March 2015</a></li>
+	<li><a href='index.html@m=201312.html'>December 2013</a></li>
+	<li><a href='index.html@m=201310.html'>October 2013</a></li>
+	<li><a href='index.html@m=201309.html'>September 2013</a></li>
+	<li><a href='index.html@m=201307.html'>July 2013</a></li>
+	<li><a href='index.html@m=201304.html'>April 2013</a></li>
+	<li><a href='index.html@m=201211.html'>November 2012</a></li>
+	<li><a href='index.html@m=201203.html'>March 2012</a></li>
+	<li><a href='index.html@m=201106.html'>June 2011</a></li>
+	<li><a href='index.html@m=201003.html'>March 2010</a></li>
+	<li><a href='index.html@m=200904.html'>April 2009</a></li>
+	<li><a href='index.html@m=200903.html'>March 2009</a></li>
+	<li><a href='index.html@m=200806.html'>June 2008</a></li>
+	<li><a href='index.html@m=200501.html'>January 2005</a></li>
+	<li><a href='index.html@m=200310.html'>October 2003</a></li>
+	<li><a href='index.html@m=200304.html'>April 2003</a></li>
+            </ul>
+        </div>
+         
+
+              <ul class="mcol">
+                            	<li class="article" id="post-802">
+			                    	                        <div class="preview"><a href="index.html@p=802.html"><img width="305" height="305" src="wp-content/uploads/notion_covers/802-305x305.jpg" class="attachment-background wp-post-image" alt="" title="[オヤトコエノコ2016] Workshop for parent and child　 " /></a></div>
+                    <div class="article-over">
+                      <h2><a href="index.html@p=802.html" title="[オヤトコエノコ2016] Workshop for parent and child　 ">[オヤトコエノコ2016] Workshop for parent and child　 </a></h2>
+                      <p>date:March,27th, 2016
+Venue: Enokojima Art, Culture and Creative Center, Osaka Prefecture &hellip; <a href="index.html@p=802.html" class="read_more">more</a></p>
+                      <div class="postmetadata">
+                          Posted: April 13, 2016<br />
+                          Filled under: <a href="index.html@cat=2.html" rel="category">Project</a>
+                      </div>
+                    </div>
+                </li>
+                            	<li class="article" id="post-64">
+			                    	                        <div class="preview"><a href="index.html@p=64.html"><img width="305" height="305" src="wp-content/uploads/notion_covers/64-305x305.jpg" class="attachment-background wp-post-image" alt="" title="SjQ++[arc] in Aichi Triennale 2013" /></a></div>
+                    <div class="article-over">
+                      <h2><a href="index.html@p=64.html" title="SjQ++[arc] in Aichi Triennale 2013">SjQ++[arc] in Aichi Triennale 2013</a></h2>
+                      <p>date:October 19, 2013
+Venue: Meitetsu-Kyosho-Parking-Choja-Machi-Daisan
+in Nagoya-City,Aic&hellip; <a href="index.html@p=64.html" class="read_more">more</a></p>
+                      <div class="postmetadata">
+                          Posted: October 19, 2013<br />
+                          Filled under: <a href="index.html@cat=2.html" rel="category">Project</a>
+                      </div>
+                    </div>
+                </li>
+                            	<li class="article" id="post-80">
+			                    	                        <div class="preview"><a href="index.html@p=80.html"><img width="305" height="305" src="wp-content/uploads/notion_covers/80-305x305.jpg" class="attachment-background wp-post-image" alt="" title="SjQ++ &quot;Ars Electronica 2013 Performance in Linz&quot;" /></a></div>
+                    <div class="article-over">
+                      <h2><a href="index.html@p=80.html" title="SjQ++ &quot;Ars Electronica 2013 Performance in Linz&quot;">SjQ++ &quot;Ars Electronica 2013 Performance in Linz&quot;</a></h2>
+                      <p>  <a href="index.html@p=80.html" class="read_more">more</a></p>
+                      <div class="postmetadata">
+                          Posted: September  9, 2013<br />
+                          Filled under: <a href="index.html@cat=2.html" rel="category">Project</a>
+                      </div>
+                    </div>
+                </li>
+                            	<li class="article" id="post-25">
+			                    	                        <div class="preview"><a href="index.html@p=25.html"><img width="305" height="305" src="wp-content/uploads/notion_covers/25-305x305.jpg" class="attachment-background wp-post-image" alt="" title="SjQ++[2013 Live digest]" /></a></div>
+                    <div class="article-over">
+                      <h2><a href="index.html@p=25.html" title="SjQ++[2013 Live digest]">SjQ++[2013 Live digest]</a></h2>
+                      <p>
+SjQ++ <a href="index.html@p=25.html" class="read_more">more</a></p>
+                      <div class="postmetadata">
+                          Posted: July 14, 2013<br />
+                          Filled under: <a href="index.html@cat=2.html" rel="category">Project</a>
+                      </div>
+                    </div>
+                </li>
+                            	<li class="article" id="post-112">
+			                    	                        <div class="preview"><a href="index.html@p=112.html"><img width="305" height="305" src="wp-content/uploads/notion_covers/112-305x305.jpg" class="attachment-background wp-post-image" alt="" title="SjQ LAB [Work Shop]" /></a></div>
+                    <div class="article-over">
+                      <h2><a href="index.html@p=112.html" title="SjQ LAB [Work Shop]">SjQ LAB [Work Shop]</a></h2>
+                      <p>
+date:April,27th, 2013
+Venue: Nara Prefectural Library and Information Center
+in Nara-City&hellip; <a href="index.html@p=112.html" class="read_more">more</a></p>
+                      <div class="postmetadata">
+                          Posted: April 18, 2013<br />
+                          Filled under: <a href="index.html@cat=2.html" rel="category">Project</a>
+                      </div>
+                    </div>
+                </li>
+                            	<li class="article" id="post-267">
+			                    	                        <div class="preview"><a href="index.html@p=267.html"><img width="305" height="305" src="wp-content/uploads/notion_covers/267-305x305.jpg" class="attachment-background wp-post-image" alt="" title="garden[short film]" /></a></div>
+                    <div class="article-over">
+                      <h2><a href="index.html@p=267.html" title="garden[short film]">garden[short film]</a></h2>
+                      <p>SjQ “garden”
+Dir. Ryohei Shimada / music SjQ
+2010 / video / color / 9 min
+ <a href="index.html@p=267.html" class="read_more">more</a></p>
+                      <div class="postmetadata">
+                          Posted: June  9, 2011<br />
+                          Filled under: <a href="index.html@cat=2.html" rel="category">Project</a>
+                      </div>
+                    </div>
+                </li>
+                            	<li class="article" id="post-42">
+			                    	                        <div class="preview"><a href="index.html@p=42.html"><img width="305" height="305" src="wp-content/uploads/notion_covers/42-305x305.jpg" class="attachment-background wp-post-image" alt="" title="pico[music video]" /></a></div>
+                    <div class="article-over">
+                      <h2><a href="index.html@p=42.html" title="pico[music video]">pico[music video]</a></h2>
+                      <p>
+SjQ &quot;Pico&quot; from Second Album Animacy
+Dir. Takafumi Tsuchiya / Takcom(tm) www.takafumitsuc&hellip; <a href="index.html@p=42.html" class="read_more">more</a></p>
+                      <div class="postmetadata">
+                          Posted: April 18, 2009<br />
+                          Filled under: <a href="index.html@cat=2.html" rel="category">Project</a>
+                      </div>
+                    </div>
+                </li>                                     </ul>
+
+                    <div id="footer">
+        	<div id="copyright">&copy; 2020 SjQ. All Rights Reserved.</div>
+            <!-- div id="credits">Powered by Wordpress. Designed by <a href="http://wpshower.com/">WPSHOWER</a></div -->
+        </div>
+    </div>
+<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js@ver=3.50.0-2014.02.05'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/sjq.jp\/contents\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/scripts.js@ver=3.8.1'></script>
+</body>
+</html>

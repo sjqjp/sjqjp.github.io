@@ -1,0 +1,75 @@
+/* SjQ mobile layer — スマホ幅のみ発動。PC表示は不変。トーン踏襲（白地・細身・余白） */
+@media screen and (max-width: 640px) {
+
+  /* 全体: 固定945px → 画面幅 */
+  html, body { overflow-x: hidden; }
+  #outer { width: auto !important; padding: 0 16px; }
+  /* 折りたたみリスト・検索の固定幅が全体を押し広げるのを防ぐ */
+  #categories, #archives, #search { width: 100% !important; }
+  #searchform #s, #searchform input { width: 100% !important; box-sizing: border-box; }
+  #top { height: auto; padding: 16px 0 4px; }
+  #logo, #logo a { width: auto !important; max-width: 100%; }
+  #logo img { max-height: 44px; width: auto; }
+
+  /* ナビ: 隠さず折り返し */
+  #menu { height: auto; padding-bottom: 6px; }
+  #cats { padding-left: 0; }
+  #cats li { line-height: 40px; margin-right: 18px; }
+  #cats li a { line-height: 40px; font-size: 14px; }
+  #navicons { float: none; clear: both; width: auto; height: auto; overflow: hidden; }
+  #navicons li { float: left; margin-right: 14px; }
+  #navicons a { height: 32px; line-height: 32px; }
+  #cats { overflow: hidden; }
+  #cats li { line-height: 36px; }
+  #cats li a { line-height: 36px; }
+
+  /* タイル: 3列 → 1列・全幅の正方形、題名と日付は画像の下に常時表示 */
+  ul.mcol { margin: 14px 0 0 !important; height: auto !important; position: static !important; }
+  ul.mcol li.article {
+    width: 100% !important; float: none !important;
+    position: static !important; left: auto !important; top: auto !important;
+    margin: 0 0 28px 0 !important; height: auto !important;
+  }
+  .mcol .preview img { width: 100%; height: auto; display: block; }
+  .mcol .article .article-over {
+    display: block !important; position: static !important;
+    padding: 10px 0 0; background: none;
+  }
+  .mcol .article-over h2 { font-size: 16px; margin: 0 0 2px; }
+  .mcol .article-over h2 a { text-decoration: none; }
+  .mcol .article-over p { display: none; }            /* 抜粋はモバイルでは省く */
+  .mcol .article-over .postmetadata {
+    display: block !important; float: none; width: auto;
+    margin: 2px 0 0; padding: 0; font-size: 11px; color: #888;
+  }
+
+  /* 記事・固定ページ: 本文を先・サイドバーを後に縦積み（DOMはsidebarが先のためflexで並べ替え） */
+  #outer { display: flex; flex-direction: column; }
+  #outer > * { min-width: 0; max-width: 100%; width: auto; }
+  /* ヘッダを常に先頭・サイドバーとフッタを末尾に。順序指定のない要素（旧ページの直置きコンテンツ）は中間に残る */
+  #top { order: -3; } #menu { order: -2; }
+  #sidebar { order: 97; } #footer { order: 98; }
+  #main { width: 100% !important; box-sizing: border-box; }
+  .entry, .article { width: auto !important; max-width: 100% !important; }
+  #main { overflow: visible; }
+  .postmetadata { float: none !important; width: auto !important; padding-left: 0 !important; }
+  /* PC用の左160pxインデント（メタ列スペース）を解除 */
+  #main h1, #main .entry, #main .article, #main .article p,
+  #main .article ul, #main .article ol, #main blockquote, #main .wp-caption {
+    margin-left: 0 !important; padding-left: 0 !important;
+  }
+  #sidebar { float: none; width: auto; padding: 24px 0 0; }
+  #sidebar img { width: 100%; height: auto; }
+  h1 { font-size: 22px; line-height: 1.3; margin-left: 0 !important; }
+
+  /* メディアは紙面内に収める */
+  img, iframe, embed, object, video { max-width: 100% !important; height: auto; }
+  iframe { aspect-ratio: 16 / 9; }
+
+  /* ページ送り: 指で押せる大きさ */
+  .wp-pagenavi a, .wp-pagenavi span {
+    display: inline-block; padding: 10px 16px; margin: 0 4px 8px 0; font-size: 16px;
+  }
+
+  #footer { height: auto; padding: 20px 0; }
+}
