@@ -11,17 +11,41 @@
   #logo, #logo a { width: auto !important; max-width: 100%; }
   #logo img { max-height: 44px; width: auto; }
 
-  /* ナビ: 隠さず折り返し */
+  /* ナビ: ハンバーガーメニュー（ボタンはcolumnize.jsが生成。JS無効時は従来の折り返し表示にフォールバック） */
   #menu { height: auto; padding-bottom: 6px; }
-  #cats { padding-left: 0; }
-  #cats li { line-height: 40px; margin-right: 18px; }
-  #cats li a { line-height: 40px; font-size: 14px; }
+  #cats { padding-left: 0; overflow: hidden; }
+  #cats li { line-height: 36px; margin-right: 18px; }
+  #cats li a { line-height: 36px; font-size: 14px; }
   #navicons { float: none; clear: both; width: auto; height: auto; overflow: hidden; }
   #navicons li { float: left; margin-right: 14px; }
   #navicons a { height: 32px; line-height: 32px; }
-  #cats { overflow: hidden; }
-  #cats li { line-height: 36px; }
-  #cats li a { line-height: 36px; }
+
+  #top { position: relative; }
+  #sjq-burger {
+    position: absolute; top: 14px; right: 0;
+    width: 48px; height: 44px; padding: 10px 6px;
+    background: none; border: none; cursor: pointer;
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+  }
+  #sjq-burger span { display: block; width: 24px; height: 2px; background: #333; margin: 0 auto; transition: 0.2s; }
+  /* 開いたときは × に */
+  .sjq-nav-open #sjq-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .sjq-nav-open #sjq-burger span:nth-child(2) { opacity: 0; }
+  .sjq-nav-open #sjq-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* JSが有効なときだけメニューを畳む */
+  body.sjq-mobile-nav #menu { display: none; border-bottom: none; }
+  body.sjq-mobile-nav.sjq-nav-open #menu { display: block; padding: 0 0 10px; }
+  body.sjq-mobile-nav.sjq-nav-open #cats li {
+    float: none; display: block; margin: 0;
+    border-bottom: solid 1px #eee;
+  }
+  body.sjq-mobile-nav.sjq-nav-open #cats li a {
+    float: none; display: block; line-height: 48px; font-size: 15px;
+  }
+  body.sjq-mobile-nav.sjq-nav-open #cats li a:hover,
+  body.sjq-mobile-nav.sjq-nav-open #cats li a.active { border-bottom: none; color: #F1407E; }
+  body.sjq-mobile-nav.sjq-nav-open #navicons { padding-top: 10px; }
 
   /* タイル: 3列 → 1列・全幅の正方形、題名と日付は画像の下に常時表示 */
   ul.mcol { margin: 14px 0 0 !important; height: auto !important; position: static !important; }
